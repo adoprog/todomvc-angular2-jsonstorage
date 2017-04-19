@@ -19,19 +19,29 @@ export class Todo {
 
 export class TodoStore {
 	todos: Array<Todo>;
+	storageUrl = "https://jsonstorage.net/api/items/4da84b0a-2a30-4044-ab9a-2076b97d5d5f";
 
 	constructor() {
-		let persistedTodos = JSON.parse(localStorage.getItem('angular2-todos') || '[]');
-		// Normalize back into classes
-		this.todos = persistedTodos.map( (todo: {_title: String, completed: Boolean}) => {
-			let ret = new Todo(todo._title);
-			ret.completed = todo.completed;
-			return ret;
-		});
+		this.todos = []];
+		
+		let xhr = new XMLHttpRequest();
+		xhr.onload = () => {
+			let persistedTodos = JSON.parse(xhr.response || '[]');
+			this.todos = persistedTodos.map((todo: { _title: String, completed: Boolean }) => {
+				let ret = new Todo(todo._title);
+				ret.completed = todo.completed;
+				return ret;
+			});
+		}
+		xhr.open("GET", this.storageUrl);
+		xhr.send();
 	}
 
 	private updateStore() {
-		localStorage.setItem('angular2-todos', JSON.stringify(this.todos));
+		let xhr = new XMLHttpRequest();
+		xhr.open("PUT", this.storageUrl, true);
+		xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+		xhr.send(JSON.stringify(this.todos));
 	}
 
 	private getWithCompleted(completed: Boolean) {

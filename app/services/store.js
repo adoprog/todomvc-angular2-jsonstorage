@@ -19,16 +19,27 @@ var Todo = (function () {
 exports.Todo = Todo;
 var TodoStore = (function () {
     function TodoStore() {
-        var persistedTodos = JSON.parse(localStorage.getItem('angular2-todos') || '[]');
-        // Normalize back into classes
-        this.todos = persistedTodos.map(function (todo) {
-            var ret = new Todo(todo._title);
-            ret.completed = todo.completed;
-            return ret;
-        });
+        var _this = this;
+        this.storageUrl = "https://jsonstorage.net/api/items/4da84b0a-2a30-4044-ab9a-2076b97d5d5f";
+        this.todos = [];
+        ;
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            var persistedTodos = JSON.parse(xhr.response || '[]');
+            _this.todos = persistedTodos.map(function (todo) {
+                var ret = new Todo(todo._title);
+                ret.completed = todo.completed;
+                return ret;
+            });
+        };
+        xhr.open("GET", this.storageUrl);
+        xhr.send();
     }
     TodoStore.prototype.updateStore = function () {
-        localStorage.setItem('angular2-todos', JSON.stringify(this.todos));
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", this.storageUrl, true);
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        xhr.send(JSON.stringify(this.todos));
     };
     TodoStore.prototype.getWithCompleted = function (completed) {
         return this.todos.filter(function (todo) { return todo.completed === completed; });
