@@ -6,12 +6,7 @@
 
 ## Resources
 
-- [Website](https://angular.io/)
-- [Documentation](https://angular.io/docs/ts/latest/)
-
-### Articles
-
-- [Angular 2 Beta Announcement](http://angularjs.blogspot.co.uk/2015/12/angular-2-beta.html)
+- [Demo](http://todomvc-jsonstorage.azurewebsites.net/)
 
 ### Support
 
