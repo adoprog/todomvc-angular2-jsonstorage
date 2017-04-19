@@ -1,4 +1,6 @@
-# Angular 2 • [TodoMVC](http://todomvc.com)
+# Angular 2 • [TodoMVC](http://todomvc.com) • [JsonStorage](https://jsonstorage.net)
+
+> JsonStorage.net is a simple web storage for your JSON data. This example shows how you can easily integrate it with any existing project.
 
 > Angular is a development platform for creating applications using modern web standards. Angular includes a wealth of essential features such as mobile gestures, animations, filtering, routing, data binding, security, internationalization, and beautiful UI components. It's extremely modular, lightweight, and easy to learn.
 
