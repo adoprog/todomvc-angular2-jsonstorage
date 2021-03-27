@@ -6,7 +6,7 @@
 
 ## Resources
 
-- [Demo](http://todomvc-jsonstorage.azurewebsites.net/)
+- [Demo](https://todomvc-jsonstorage.azurewebsites.net/)
 
 ### Support
 
