@@ -19,7 +19,7 @@ export class Todo {
 
 export class TodoStore {
 	todos: Array<Todo>;
-	storageUrl = "https://jsonstorage.net/api/items/4da84b0a-2a30-4044-ab9a-2076b97d5d5f";
+	storageUrl = "https://api.jsonstorage.net/v1/json/c0e97f16-0f4d-4f9b-8284-ce63da52e83a";
 
 	constructor() {
 		this.todos = []];
