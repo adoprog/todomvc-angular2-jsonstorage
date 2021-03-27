@@ -22,7 +22,7 @@ export class TodoStore {
 	storageUrl = "https://api.jsonstorage.net/v1/json/c0e97f16-0f4d-4f9b-8284-ce63da52e83a";
 
 	constructor() {
-		this.todos = []];
+		this.todos = [];
 		
 		let xhr = new XMLHttpRequest();
 		xhr.onload = () => {

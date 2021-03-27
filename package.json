@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "tsc": "tsc",
     "dev": "tsc --watch"
   },
   "devDependencies": {

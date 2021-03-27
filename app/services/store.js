@@ -20,9 +20,8 @@ exports.Todo = Todo;
 var TodoStore = (function () {
     function TodoStore() {
         var _this = this;
-        this.storageUrl = "https://jsonstorage.net/api/items/4da84b0a-2a30-4044-ab9a-2076b97d5d5f";
+        this.storageUrl = "https://api.jsonstorage.net/v1/json/c0e97f16-0f4d-4f9b-8284-ce63da52e83a";
         this.todos = [];
-        ;
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
             var persistedTodos = JSON.parse(xhr.response || '[]');
